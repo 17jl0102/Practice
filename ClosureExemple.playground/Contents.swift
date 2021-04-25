@@ -127,10 +127,10 @@ func double(_ x: Int) -> Int {
 let primeNumber = [1,3,5]
 let doubleArray = primeNumber.map(double)
 
+
 var board: [[Int]] = {
     let sideLength = 3
     let row = Array(repeating: 1, count: 3)
     let board = Array(repeating: row, count: sideLength)
     return board
 }()
-board
