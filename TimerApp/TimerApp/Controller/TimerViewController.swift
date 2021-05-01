@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol TimerViewDelegate {
-    func setTimer() -> Int
-    func endTimer()
-}
-
 class TimerViewController: UIViewController {
 
     override func viewDidLoad() {

@@ -7,11 +7,18 @@
 
 import UIKit
 
+protocol TimerViewDelegate {
+    func setTimer() -> Int
+    func endTimer()
+}
+
 @IBDesignable
 class TimerView: UIView {
     
     @IBOutlet weak var timeLabel: UILabel!
-
+    
+    var delegate: TimerViewDelegate?
+    var timer: Timer?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,6 +28,10 @@ class TimerView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadXib()
+    }
+    
+    @IBAction func timerBottun(_ sender: UIButton) {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countdown), userInfo: nil, repeats: true)
     }
     
     private func loadXib() {
@@ -33,7 +44,12 @@ class TimerView: UIView {
         timerView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         timerView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         timerView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        
     }
     
+    @objc func countdown() {
+        var setTime = delegate?.setTimer()
+        setTime = 10
+    }
+    
+    func delegate?.endTimer() = {
 }

@@ -134,3 +134,14 @@ var board: [[Int]] = {
     let board = Array(repeating: row, count: sideLength)
     return board
 }()
+
+protocol TimerViewDelegate {
+    func setTimer() -> Int
+    func endTimer()
+}
+
+var delegate: TimerViewDelegate?
+
+var setTime = delegate?.setTimer()
+setTime = 10
+print(setTime)
