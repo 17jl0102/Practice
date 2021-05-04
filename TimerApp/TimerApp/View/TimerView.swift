@@ -16,9 +16,16 @@ protocol TimerViewDelegate {
 class TimerView: UIView {
     
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var timerButton: UIButton!
     
-    var delegate: TimerViewDelegate?
+    var delegate: TimerViewDelegate? {
+        didSet {
+            self.setTime = delegate?.setTimer() ?? 0
+        }
+    }
+    
     var timer: Timer?
+    var setTime = 1
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,9 +37,11 @@ class TimerView: UIView {
         loadXib()
     }
     
-    @IBAction func timerBottun(_ sender: UIButton) {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countdown), userInfo: nil, repeats: true)
-    }
+    @IBAction func didTapTimerControl(_ sender: UIButton) {
+        timerButton.setTitle("ストップ", for: .normal)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countdown), userInfo: nil, repeats: true)}
+        //スタート・ストップボタンの制御
+  
     
     private func loadXib() {
         let timerView = Bundle.main.loadNibNamed("TimerView", owner: self, options: nil)?.first as! UIView
@@ -47,9 +56,13 @@ class TimerView: UIView {
     }
     
     @objc func countdown() {
-        var setTime = delegate?.setTimer()
-        setTime = 10
+        self.setTime -= 1
+        timeLabel.text = String(setTime)
+        if setTime == 0 {
+            delegate?.endTimer()
+            //タイマーを停止する処理
+            timer?.invalidate()
+            timeLabel.text = String(self.setTime)
+        }
     }
-    
-    func delegate?.endTimer() = {
 }

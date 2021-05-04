@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimerView" customModule="TimerApp" customModuleProvider="target">
             <connections>
                 <outlet property="timeLabel" destination="lml-Q8-mJO" id="jBb-lX-bTs"/>
+                <outlet property="timerButton" destination="ZfC-6C-dgb" id="nfq-HI-0ko"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -29,7 +30,7 @@
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
                     <state key="normal" title="スタート"/>
                     <connections>
-                        <action selector="timerBottun:" destination="-1" eventType="touchUpInside" id="xXK-5o-oDY"/>
+                        <action selector="didTapTimerControl:" destination="-1" eventType="touchUpInside" id="xXK-5o-oDY"/>
                     </connections>
                 </button>
             </subviews>
