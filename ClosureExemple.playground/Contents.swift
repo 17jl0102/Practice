@@ -144,4 +144,4 @@ var delegate: TimerViewDelegate?
 
 var setTime = delegate?.setTimer()
 setTime = 10
-print(setTime)
+print(setTime ?? 0)

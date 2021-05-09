@@ -18,14 +18,14 @@ class TimerView: UIView {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timerButton: UIButton!
     
+    var timer: Timer?
+    var setTime = 1
+    
     var delegate: TimerViewDelegate? {
         didSet {
             self.setTime = delegate?.setTimer() ?? 0
         }
     }
-    
-    var timer: Timer?
-    var setTime = 1
     
     override init(frame: CGRect) {
         super.init(frame: frame)
