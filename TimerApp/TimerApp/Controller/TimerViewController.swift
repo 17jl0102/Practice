@@ -9,11 +9,12 @@ import UIKit
 
 class TimerViewController: UIViewController {
     
-    var timerView = TimerView()
+    @IBOutlet weak var timerView: TimerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timerView.timeLabel.text = String(timerView.setTime)
+        timerView.delegate = self
+        
     }
     
 }
@@ -21,7 +22,7 @@ extension TimerViewController: TimerViewDelegate {
     func setTimer() -> Int {
         return 10
     }
-    
+
     func endTimer() {
         self.view.backgroundColor = .red
     }
