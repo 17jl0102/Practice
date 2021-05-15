@@ -10,6 +10,7 @@ import UIKit
 protocol TimerViewDelegate {
     func setTimer() -> Int
     func endTimer()
+    func resetTimer()
 }
 
 @IBDesignable
@@ -45,13 +46,17 @@ class TimerView: UIView {
     @IBAction func didTapTimerControl(_ sender: UIButton) {
         if timer == nil {
             timerButton.setTitle("ストップ", for: .normal)
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countdown), userInfo: nil, repeats: true)}
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countdown), userInfo: nil, repeats: true)
         } else {
             timer?.invalidate()
-            timerButton.setTitle("スタート", for: normal)
+            timer = nil
+                timerButton.setTitle("スタート", for: .normal)
             setTime = delegate?.setTimer() ?? 0
             timeLabel.text = String(setTime)
-        }
+            delegate?.resetTimer()
+            }
+        
+    }
     
     private func loadXib() {
         let timerView = Bundle.main.loadNibNamed("TimerView", owner: self, options: nil)?.first as! UIView

@@ -14,10 +14,9 @@ class TimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         timerView.delegate = self
-        
     }
-    
 }
+
 extension TimerViewController: TimerViewDelegate {
     func setTimer() -> Int {
         return 10
@@ -26,5 +25,8 @@ extension TimerViewController: TimerViewDelegate {
     func endTimer() {
         self.view.backgroundColor = .red
     }
+    
+    func resetTimer() {
+        self.view.backgroundColor = .white
+    }
 }
-
