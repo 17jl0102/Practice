@@ -45,18 +45,22 @@ class TimerView: UIView {
     
     @IBAction func didTapTimerControl(_ sender: UIButton) {
         if timer == nil {
-            timerButton.setTitle("ストップ", for: .normal)
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countdown), userInfo: nil, repeats: true)
+            if setTime == 0 {
+                setTime = delegate?.setTimer() ?? 0
+                delegate?.resetTimer()
+                timerButton.setTitle("スタート", for: .normal)
+                
+            } else {
+                timerButton.setTitle("ストップ", for: .normal)
+                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countdown), userInfo: nil, repeats: true)
+            }
         } else {
+            timerButton.setTitle("スタート", for: .normal)
             timer?.invalidate()
             timer = nil
-                timerButton.setTitle("スタート", for: .normal)
-            setTime = delegate?.setTimer() ?? 0
-            timeLabel.text = String(setTime)
-            delegate?.resetTimer()
-            }
-        
+        }
     }
+    
     
     private func loadXib() {
         let timerView = Bundle.main.loadNibNamed("TimerView", owner: self, options: nil)?.first as! UIView
@@ -76,7 +80,8 @@ class TimerView: UIView {
             delegate?.endTimer()
             //タイマーを停止する処理
             timer?.invalidate()
-            //timerButton.isEnabled = false
+            timer = nil
+            timerButton.setTitle("リセット", for: .normal)
         }
     }
 }
