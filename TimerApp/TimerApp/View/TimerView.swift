@@ -19,18 +19,27 @@ class TimerView: UIView {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timerButton: UIButton!
     
-    var timer: Timer?
+    private var timer: Timer?
+    
+    private var time: Int = 0
+    
     var setTime = 0 {
         didSet {
             timeLabel.text = String(setTime)
         }
     }
     
-    
     var delegate: TimerViewDelegate? {
         didSet {
             self.setTime = delegate?.setTimer() ?? 0
         }
+    }
+    
+    enum timerStatus: String {
+        case start
+        case stop
+        case reset
+        case timeOver
     }
     
     override init(frame: CGRect) {
@@ -44,23 +53,36 @@ class TimerView: UIView {
     }
     
     @IBAction func didTapTimerControl(_ sender: UIButton) {
+        
         if timer == nil {
             if setTime == 0 {
                 setTime = delegate?.setTimer() ?? 0
                 delegate?.resetTimer()
-                timerButton.setTitle("スタート", for: .normal)
+                timerButtonChangeTitle(status: .reset)
                 
             } else {
-                timerButton.setTitle("ストップ", for: .normal)
+                timerButtonChangeTitle(status: .start)
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countdown), userInfo: nil, repeats: true)
             }
         } else {
-            timerButton.setTitle("スタート", for: .normal)
+            timerButtonChangeTitle(status: .stop)
             timer?.invalidate()
             timer = nil
         }
     }
     
+    private func timerButtonChangeTitle(status: timerStatus) {
+        switch  status {
+        case .start:
+            timerButton.setTitle("ストップ", for: .normal)
+        case .stop:
+            timerButton.setTitle("スタート", for: .normal)
+        case .reset:
+            timerButton.setTitle("スタート", for: .normal)
+        case .timeOver:
+            timerButton.setTitle("リセット", for: .normal)
+        }
+    }
     
     private func loadXib() {
         let timerView = Bundle.main.loadNibNamed("TimerView", owner: self, options: nil)?.first as! UIView
@@ -74,14 +96,19 @@ class TimerView: UIView {
         timerView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
     }
     
-    @objc func countdown() {
+    @objc private func countdown() {
         self.setTime -= 1
         if setTime == 0 {
             delegate?.endTimer()
             //タイマーを停止する処理
             timer?.invalidate()
             timer = nil
-            timerButton.setTitle("リセット", for: .normal)
+            timerButtonChangeTitle(status: .timeOver)
         }
     }
+    
+    func resetData() -> Int {
+        return time
+    }
+    
 }

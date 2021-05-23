@@ -7,49 +7,235 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "805CEE32-F67F-4B33-8F4D-6B244DDBF8D2"
+            uuid = "B8ED251B-9107-450B-AEEA-52E52839B03B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimerApp/Controller/TimerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "endTimer()"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "setTime"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37EBE0DB-2C92-4F68-8E6F-3E1AFC0D4A72"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TimerApp/Controller/TimerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "setTimer()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A626AACE-CDA1-49D2-A7D7-3919800533D9"
+            uuid = "7FDF85CE-292E-4BA5-B073-291B3CBD4DB8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimerApp/View/TimerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "countdown()"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "resetData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2D4B0D90-A0FC-48B1-B7BC-149485BDFBC1"
+            uuid = "26640D58-116C-43D5-8102-137CE4183C56"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimerApp/View/TimerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "countdown()"
-            landmarkType = "7">
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "TimerView"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "26640D58-116C-43D5-8102-137CE4183C56 - c970b164be0e6c2d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TimerApp.TimerView.time.getter : Swift.Int"
+                  moduleName = "TimerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kadoya/swift/Practice/TimerApp/TimerApp/View/TimerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "110">
+               </Location>
+               <Location
+                  uuid = "26640D58-116C-43D5-8102-137CE4183C56 - c798a01c0a15039"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TimerApp.TimerView.time.setter : Swift.Int"
+                  moduleName = "TimerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kadoya/swift/Practice/TimerApp/TimerApp/View/TimerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "118">
+               </Location>
+               <Location
+                  uuid = "26640D58-116C-43D5-8102-137CE4183C56 - 9ea3b0cd410480d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TimerApp.TimerView.time.modify : Swift.Int"
+                  moduleName = "TimerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kadoya/swift/Practice/TimerApp/TimerApp/View/TimerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "26640D58-116C-43D5-8102-137CE4183C56 - 907ca5a31b856b39"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TimerApp.TimerView.time.modify : Swift.Int with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "TimerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kadoya/swift/Practice/TimerApp/TimerApp/View/TimerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "8">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "747A47E1-C3CC-4C54-8133-14D5D2C8CC0E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TimerApp/Controller/TimerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "setTime"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "747A47E1-C3CC-4C54-8133-14D5D2C8CC0E - 54c085130ff7719c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TimerApp.TimerViewController.setTime.getter : Swift.Int"
+                  moduleName = "TimerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kadoya/swift/Practice/TimerApp/TimerApp/Controller/TimerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "110">
+               </Location>
+               <Location
+                  uuid = "747A47E1-C3CC-4C54-8133-14D5D2C8CC0E - cc0c61011b188580"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TimerApp.TimerViewController.setTime.setter : Swift.Int"
+                  moduleName = "TimerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kadoya/swift/Practice/TimerApp/TimerApp/Controller/TimerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "129">
+               </Location>
+               <Location
+                  uuid = "747A47E1-C3CC-4C54-8133-14D5D2C8CC0E - 902b0cbd6bfa90bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TimerApp.TimerViewController.setTime.modify : Swift.Int"
+                  moduleName = "TimerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kadoya/swift/Practice/TimerApp/TimerApp/Controller/TimerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "747A47E1-C3CC-4C54-8133-14D5D2C8CC0E - e7ed5d9acb928480"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TimerApp.TimerViewController.setTime.modify : Swift.Int with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "TimerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kadoya/swift/Practice/TimerApp/TimerApp/Controller/TimerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "10">
+               </Location>
+               <Location
+                  uuid = "747A47E1-C3CC-4C54-8133-14D5D2C8CC0E - 998ad06f1328566e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TimerApp.TimerViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; TimerApp.TimerViewController"
+                  moduleName = "TimerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kadoya/swift/Practice/TimerApp/TimerApp/Controller/TimerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "289">
+               </Location>
+               <Location
+                  uuid = "747A47E1-C3CC-4C54-8133-14D5D2C8CC0E - 5579d3d52e916d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TimerApp.TimerViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;TimerApp.TimerViewController&gt;"
+                  moduleName = "TimerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kadoya/swift/Practice/TimerApp/TimerApp/Controller/TimerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "242">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

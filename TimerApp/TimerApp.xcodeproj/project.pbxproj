@@ -17,6 +17,7 @@
 		80911D9C2633D90C008DDDB0 /* TimerAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80911D9B2633D90C008DDDB0 /* TimerAppUITests.swift */; };
 		80911DAD2633DBB6008DDDB0 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80911DAC2633DBB6008DDDB0 /* TimerView.swift */; };
 		80911DB22633DDC7008DDDB0 /* TimerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80911DB12633DDC7008DDDB0 /* TimerView.xib */; };
+		80D4183A2658A1ED00CBAB8A /* PickerKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D418392658A1ED00CBAB8A /* PickerKeyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		80911D9D2633D90C008DDDB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80911DAC2633DBB6008DDDB0 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		80911DB12633DDC7008DDDB0 /* TimerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerView.xib; sourceTree = "<group>"; };
+		80D418392658A1ED00CBAB8A /* PickerKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerKeyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			children = (
 				80911DAC2633DBB6008DDDB0 /* TimerView.swift */,
 				80911DB12633DDC7008DDDB0 /* TimerView.xib */,
+				80D418392658A1ED00CBAB8A /* PickerKeyboard.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80911D7E2633D8FD008DDDB0 /* TimerViewController.swift in Sources */,
+				80D4183A2658A1ED00CBAB8A /* PickerKeyboard.swift in Sources */,
 				80911D7A2633D8FD008DDDB0 /* AppDelegate.swift in Sources */,
 				80911DAD2633DBB6008DDDB0 /* TimerView.swift in Sources */,
 				80911D7C2633D8FD008DDDB0 /* SceneDelegate.swift in Sources */,

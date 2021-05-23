@@ -10,6 +10,14 @@ import UIKit
 class TimerViewController: UIViewController {
     
     @IBOutlet weak var timerView: TimerView!
+    @IBOutlet weak var pickerView: PickerKeyboard!
+    
+    var setTime = 0 {
+        didSet {
+            setTime = timerView.resetData()
+            //Timer ViewにresetDataというFunctionを定義しそれを呼び出す
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +27,7 @@ class TimerViewController: UIViewController {
 
 extension TimerViewController: TimerViewDelegate {
     func setTimer() -> Int {
-        return 10
+        return self.setTime
     }
 
     func endTimer() {
