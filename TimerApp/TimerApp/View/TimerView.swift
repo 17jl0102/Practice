@@ -21,7 +21,6 @@ class TimerView: UIView {
     
     private var timer: Timer?
     
-    private var time: Int = 0
     
     var setTime = 0 {
         didSet {
@@ -32,6 +31,12 @@ class TimerView: UIView {
     var delegate: TimerViewDelegate? {
         didSet {
             self.setTime = delegate?.setTimer() ?? 0
+        }
+    }
+    
+    var pickerDelegate: PickerDelegate? {
+        didSet {
+            self.setTime = pickerDelegate?.secondTime() ?? 0
         }
     }
     
@@ -107,8 +112,8 @@ class TimerView: UIView {
         }
     }
     
-    func resetData() -> Int {
-        return time
+    func resetData(time: Int) {
+       
     }
-    
+
 }

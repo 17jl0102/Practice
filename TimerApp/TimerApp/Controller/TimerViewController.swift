@@ -14,9 +14,8 @@ class TimerViewController: UIViewController {
     
     var setTime = 0 {
         didSet {
-            setTime = timerView.resetData()
-            //Timer ViewにresetDataというFunctionを定義しそれを呼び出す
         }
+            //Timer ViewにresetDataというFunctionを定義しそれを呼び出す
     }
     
     override func viewDidLoad() {

@@ -7,8 +7,17 @@
 
 import UIKit
 
+protocol PickerDelegate {
+    func secondTime() -> Int
+}
+
 class PickerKeyboard: UIControl {
-    let second:[Int] = ([Int])(1...60)
+    let seconds:[Int] = ([Int])(1...60)
+    var pickerView: UIPickerView?
+    var keyboardView: UIView?
+    var timerView = TimerView()
+    
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -26,22 +35,25 @@ class PickerKeyboard: UIControl {
     }
     
     override var inputView: UIView? {
+      if let keyboardView = keyboardView {
+        return keyboardView
+      } else {
+        let keyboardView = UIView()
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.dataSource = self
-        
-        let view = UIView()
-        view.backgroundColor = .white
-        view.autoresizingMask = [.flexibleHeight]
-        view.addSubview(pickerView)
-        
+        keyboardView.backgroundColor = .white
+        keyboardView.autoresizingMask = [.flexibleHeight]
+        keyboardView.addSubview(pickerView)
         pickerView.translatesAutoresizingMaskIntoConstraints = false
-        pickerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        pickerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        pickerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        pickerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
-        return view
+        pickerView.topAnchor.constraint(equalTo: keyboardView.topAnchor).isActive = true
+        pickerView.bottomAnchor.constraint(equalTo: keyboardView.bottomAnchor).isActive = true
+        pickerView.leadingAnchor.constraint(equalTo: keyboardView.leadingAnchor).isActive = true
+        pickerView.trailingAnchor.constraint(equalTo: keyboardView.trailingAnchor).isActive = true
+        self.keyboardView = keyboardView
+        self.pickerView = pickerView
+        return keyboardView
+      }
     }
     
     override var inputAccessoryView: UIView? {
@@ -65,7 +77,7 @@ class PickerKeyboard: UIControl {
     }
     
     @objc private func tappedCloseButton(_ sender: UIButton) {
-        
+        // .delegate = self
         resignFirstResponder()
     }
 }
@@ -76,14 +88,20 @@ extension PickerKeyboard: UIPickerViewDelegate,UIPickerViewDataSource {
     }
         
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-            return second.count
+            return seconds.count
     }
     
     func pickerView(_ pickerVeiw: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return String(second[row]) + "秒"
+        return String(seconds[row]) + "秒"
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
+    }
+}
+
+extension PickerKeyboard: PickerDelegate {
+    func secondTime() -> Int{
+        let secodKey = pickerView?.selectedRow(inComponent: 0) ?? 0
+        return seconds[secodKey]
     }
 }
