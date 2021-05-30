@@ -18,6 +18,7 @@ class TimerViewController: UIViewController {
         didSet {
             //依頼先から渡され値をsetTimeにセットしたときにresetData()を呼び出す
             timerView.resetData()
+            view.backgroundColor = .black
         }
     }
     
@@ -41,7 +42,7 @@ extension TimerViewController: TimerViewDelegate {
     }
     
     func resetTimer() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .black
     }
 }
 

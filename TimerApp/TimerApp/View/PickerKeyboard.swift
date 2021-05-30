@@ -12,7 +12,7 @@ protocol PickerDelegate {
 }
 
 class PickerKeyboard: UIControl {
-    let seconds:[Int] = ([Int])(1...60)
+    let seconds:[Int] = ([Int])(1...300)
     var pickerView: UIPickerView?
     var keyboardView: UIView?
     var timerView = TimerView()
@@ -41,7 +41,7 @@ class PickerKeyboard: UIControl {
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.dataSource = self
-        keyboardView.backgroundColor = .white
+        keyboardView.backgroundColor = .gray
         keyboardView.autoresizingMask = [.flexibleHeight]
         keyboardView.addSubview(pickerView)
         pickerView.translatesAutoresizingMaskIntoConstraints = false
@@ -95,9 +95,6 @@ extension PickerKeyboard: UIPickerViewDelegate,UIPickerViewDataSource {
     func pickerView(_ pickerVeiw: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return String(seconds[row]) + "秒"
     }
-    
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//    }
 }
 
 

@@ -111,6 +111,7 @@ class TimerView: UIView {
     func resetData() {
         //TimerViewのsetTimeにTimerViewControllerのsetTimeを代入
         self.setTime = delegate?.setTimer() ?? 0
+        timerButtonChangeTitle(status: .reset)
     }
 
 }
