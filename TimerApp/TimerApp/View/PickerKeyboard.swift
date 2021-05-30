@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PickerDelegate {
-    func secondTime() -> Int
+    func dieSelectTime(time: Int)
 }
 
 class PickerKeyboard: UIControl {
@@ -16,8 +16,7 @@ class PickerKeyboard: UIControl {
     var pickerView: UIPickerView?
     var keyboardView: UIView?
     var timerView = TimerView()
-    
-    
+    var delegate: PickerDelegate?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -77,7 +76,9 @@ class PickerKeyboard: UIControl {
     }
     
     @objc private func tappedCloseButton(_ sender: UIButton) {
-        // .delegate = self
+        let index = pickerView?.selectedRow(inComponent: 0) ?? 0
+        //pickerViewで選択された行の秒数を依頼元(TimerViewController)に渡してる
+        delegate?.dieSelectTime(time: seconds[index])
         resignFirstResponder()
     }
 }
@@ -95,13 +96,8 @@ extension PickerKeyboard: UIPickerViewDelegate,UIPickerViewDataSource {
         return String(seconds[row]) + "秒"
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    }
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//    }
 }
 
-extension PickerKeyboard: PickerDelegate {
-    func secondTime() -> Int{
-        let secodKey = pickerView?.selectedRow(inComponent: 0) ?? 0
-        return seconds[secodKey]
-    }
-}
+

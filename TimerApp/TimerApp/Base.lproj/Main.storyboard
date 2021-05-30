@@ -54,7 +54,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pickerView" destination="Izr-9x-bGE" id="JhY-mD-70s"/>
+                        <outlet property="pickerKeyboard" destination="Izr-9x-bGE" id="JhY-mD-70s"/>
                         <outlet property="timerView" destination="e3p-IT-es2" id="3r0-RG-eMR"/>
                     </connections>
                 </viewController>

@@ -10,22 +10,29 @@ import UIKit
 class TimerViewController: UIViewController {
     
     @IBOutlet weak var timerView: TimerView!
-    @IBOutlet weak var pickerView: PickerKeyboard!
+    @IBOutlet weak var pickerKeyboard: PickerKeyboard!
+    
+    
     
     var setTime = 0 {
         didSet {
+            //依頼先から渡され値をsetTimeにセットしたときにresetData()を呼び出す
+            timerView.resetData()
         }
-            //Timer ViewにresetDataというFunctionを定義しそれを呼び出す
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //「=」は右辺を左辺への代入
+        //今回の場合、TimerViewControllerがdelegateに依頼している
         timerView.delegate = self
+        pickerKeyboard.delegate = self
     }
 }
 
 extension TimerViewController: TimerViewDelegate {
     func setTimer() -> Int {
+        //TimerViewControllerのsetTimeを返す
         return self.setTime
     }
 
@@ -35,5 +42,12 @@ extension TimerViewController: TimerViewDelegate {
     
     func resetTimer() {
         self.view.backgroundColor = .white
+    }
+}
+
+extension TimerViewController: PickerDelegate {
+    func dieSelectTime(time: Int) {
+        //依頼先から渡された値を自身のプロパティ(今回はsetTime)にセットする
+        setTime = time
     }
 }

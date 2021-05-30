@@ -34,11 +34,7 @@ class TimerView: UIView {
         }
     }
     
-    var pickerDelegate: PickerDelegate? {
-        didSet {
-            self.setTime = pickerDelegate?.secondTime() ?? 0
-        }
-    }
+    
     
     enum timerStatus: String {
         case start
@@ -112,8 +108,9 @@ class TimerView: UIView {
         }
     }
     
-    func resetData(time: Int) {
-       
+    func resetData() {
+        //TimerViewのsetTimeにTimerViewControllerのsetTimeを代入
+        self.setTime = delegate?.setTimer() ?? 0
     }
 
 }
