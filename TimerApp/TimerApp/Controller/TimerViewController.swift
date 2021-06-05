@@ -12,8 +12,6 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var timerView: TimerView!
     @IBOutlet weak var pickerKeyboard: PickerKeyboard!
     
-    
-    
     var setTime = 0 {
         didSet {
             //依頼先から渡され値をsetTimeにセットしたときにresetData()を呼び出す

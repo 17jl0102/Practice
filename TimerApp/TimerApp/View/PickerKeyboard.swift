@@ -12,15 +12,16 @@ protocol PickerDelegate {
 }
 
 class PickerKeyboard: UIControl {
+    @IBOutlet weak var timerView: TimerView!
     let seconds:[Int] = ([Int])(1...300)
     var pickerView: UIPickerView?
     var keyboardView: UIView?
-    var timerView = TimerView()
     var delegate: PickerDelegate?
+    
+    timerview.setDelegate = self
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
         addTarget(self, action: #selector(tappedPickerKeyboard(_:)), for: .touchDown)
     }
     
@@ -97,4 +98,14 @@ extension PickerKeyboard: UIPickerViewDelegate,UIPickerViewDataSource {
     }
 }
 
+extension PickerKeyboard: TimeSetDelegate {
+    func ButtonHide() {
+        timerView.isHidden = true
+    }
+    
+    func ButtonDisplay() {
+        timerView.isHidden = false
+    }
+    
 
+}

@@ -13,6 +13,11 @@ protocol TimerViewDelegate {
     func resetTimer()
 }
 
+protocol TimeSetDelegate {
+    func ButtonHide()
+    func ButtonDisplay()
+}
+
 @IBDesignable
 class TimerView: UIView {
     
@@ -20,7 +25,6 @@ class TimerView: UIView {
     @IBOutlet weak var timerButton: UIButton!
     
     private var timer: Timer?
-    
     
     var setTime = 0 {
         didSet {
@@ -34,7 +38,7 @@ class TimerView: UIView {
         }
     }
     
-    
+    var setDelegate: TimeSetDelegate?
     
     enum timerStatus: String {
         case start
@@ -53,6 +57,8 @@ class TimerView: UIView {
         loadXib()
     }
     
+    
+    
     @IBAction func didTapTimerControl(_ sender: UIButton) {
         
         if timer == nil {
@@ -64,6 +70,7 @@ class TimerView: UIView {
             } else {
                 timerButtonChangeTitle(status: .start)
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countdown), userInfo: nil, repeats: true)
+                setDelegate?.ButtonHide()
             }
         } else {
             timerButtonChangeTitle(status: .stop)
@@ -104,6 +111,7 @@ class TimerView: UIView {
             //タイマーを停止する処理
             timer?.invalidate()
             timer = nil
+            setDelegate?.ButtonDisplay()
             timerButtonChangeTitle(status: .timeOver)
         }
     }
