@@ -12,13 +12,13 @@ protocol PickerDelegate {
 }
 
 class PickerKeyboard: UIControl {
-    @IBOutlet weak var timerView: TimerView!
+//    @IBOutlet weak var timerView: TimerView!
     let seconds:[Int] = ([Int])(1...300)
     var pickerView: UIPickerView?
     var keyboardView: UIView?
     var delegate: PickerDelegate?
     
-    timerview.setDelegate = self
+//    timerview.setDelegate = self
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -98,14 +98,14 @@ extension PickerKeyboard: UIPickerViewDelegate,UIPickerViewDataSource {
     }
 }
 
-extension PickerKeyboard: TimeSetDelegate {
-    func ButtonHide() {
-        timerView.isHidden = true
-    }
-    
-    func ButtonDisplay() {
-        timerView.isHidden = false
-    }
-    
-
-}
+//extension PickerKeyboard: TimeSetDelegate {
+//    func ButtonHide() {
+//        timerView.isHidden = true
+//    }
+//    
+//    func ButtonDisplay() {
+//        timerView.isHidden = false
+//    }
+//    
+//
+//}

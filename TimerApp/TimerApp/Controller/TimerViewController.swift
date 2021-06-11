@@ -30,6 +30,14 @@ class TimerViewController: UIViewController {
 }
 
 extension TimerViewController: TimerViewDelegate {
+    func didStartTimer() {
+        pickerKeyboard.isEnabled = false
+    }
+    
+    func didStopTimer() {
+        pickerKeyboard.isEnabled = true
+    }
+    
     func setTimer() -> Int {
         //TimerViewControllerのsetTimeを返す
         return self.setTime

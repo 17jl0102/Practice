@@ -40,9 +40,6 @@
                                     <constraint firstItem="e0w-kS-M0T" firstAttribute="top" secondItem="Izr-9x-bGE" secondAttribute="top" id="o9z-CC-DZI"/>
                                     <constraint firstAttribute="trailing" secondItem="e0w-kS-M0T" secondAttribute="trailing" id="rbC-2s-jBi"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="timerView" destination="e3p-IT-es2" id="dvh-sL-3L7"/>
-                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
